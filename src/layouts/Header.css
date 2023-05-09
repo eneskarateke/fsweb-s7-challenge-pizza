@@ -1,0 +1,25 @@
+header {
+    background: #CE2829;
+    width: 100%;
+    
+}
+
+header h1 {
+    color: azure;
+}
+
+header nav {
+    display: flex;
+
+}
+.headerTexts{
+margin: 0rem 15rem;
+text-align: center;
+}
+
+header nav a {
+    padding: 0rem 1rem;
+    text-decoration: none;
+    color: white;
+
+}

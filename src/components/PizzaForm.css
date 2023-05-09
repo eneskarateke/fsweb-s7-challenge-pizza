@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&family=Quattrocento:wght@400;700&family=Satisfy&display=swap');
+/* font-family: 'Barlow', sans-serif;
+font-family: 'Quattrocento', serif;
+font-family: 'Satisfy', cursive; */
+
+.dropdowns {
+    display: flex;
+    justify-content: space-between;
+}
+.bold{
+    font-weight: bold;
+}
+.tabanPizza h1 {
+    color:black
+}
+
+#pizza-form{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+.formContainer{
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.formContainerInner{
+width: 40%;
+margin-top: 1rem;
+}
+
+.siparisOzet{
+    text-align: initial;
+}
+.red{
+    color: red;
+}
+
+.tabanPizza{
+    text-align: start;
+}
+
+.kucukFont {
+    font-size: 16px;
+    color: #5F5F5F;
+}
