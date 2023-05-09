@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-
+import { useHistory } from 'react-router-dom';
 import Header from "../layouts/Header";
 import "./PizzaForm.css";
 
@@ -11,6 +11,7 @@ const PizzaForm = () => {
     description: "Mozarella ve domates sos",
     price: 70
   });
+  
 
 const [formData, setFormData] = useState({
 name: "",
@@ -49,6 +50,8 @@ toppings,
 });
 };
 
+const history = useHistory();
+
 const handleSubmit = (e) => {
   e.preventDefault();
   if (formData.name.length < 2) {
@@ -64,9 +67,10 @@ const handleSubmit = (e) => {
     price: total,
   });
   axios
-    .post("https://reqres.in/api/orders", formData)
+    .post("https://64591bd94eb3f674df86eb01.mockapi.io/orders", formData)
     .then((response) => {
       console.log(response.data);
+      history.push('/success'); 
     })
     .catch((error) => {
       console.log(error);
@@ -151,71 +155,71 @@ return (
               </Label>
             </FormGroup>
             <FormGroup check inline>
-  <Label check>
-    <Input
-      type="checkbox"
-      name="pepperoni"
-      checked={formData.toppings.includes("pepperoni")}
-      onChange={handleToppingsChange}
-    />
-    Pepperoni
-  </Label>
-</FormGroup>
-<FormGroup check inline>
-  <Label check>
-    <Input
-      type="checkbox"
-      name="sausage"
-      checked={formData.toppings.includes("sausage")}
-      onChange={handleToppingsChange}
-    />
-    Sosis
-  </Label>
-</FormGroup>
-<FormGroup check inline>
-  <Label check>
-    <Input
-      type="checkbox"
-      name="bacon"
-      checked={formData.toppings.includes("bacon")}
-      onChange={handleToppingsChange}
-    />
-    Dumanlı Sığır Pastırması
-  </Label>
-</FormGroup>
-<FormGroup check inline>
-  <Label check>
-    <Input
-      type="checkbox"
-      name="ham"
-      checked={formData.toppings.includes("ham")}
-      onChange={handleToppingsChange}
-    />
-    Jambon
-  </Label>
-</FormGroup>
-<FormGroup check inline>
-  <Label check>
-    <Input
-      type="checkbox"
-      name="anchovies"
-      checked={formData.toppings.includes("anchovies")}
-      onChange={handleToppingsChange}
-    />
-    Hamsi
-  </Label>
-</FormGroup>
-<FormGroup check inline>
-  <Label check>
-    <Input
-      type="checkbox"
-      name="chicken"
-      checked={formData.toppings.includes("chicken")}
-      onChange={handleToppingsChange}
-    />
-    Tavuk
-  </Label>
-</FormGroup>
+              <Label check>
+                <Input
+                  type="checkbox"
+                  name="pepperoni"
+                  checked={formData.toppings.includes("pepperoni")}
+                  onChange={handleToppingsChange}
+                />
+                Pepperoni
+              </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check>
+                <Input
+                  type="checkbox"
+                  name="sausage"
+                  checked={formData.toppings.includes("sausage")}
+                  onChange={handleToppingsChange}
+                />
+                Sosis
+              </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check>
+                <Input
+                  type="checkbox"
+                  name="bacon"
+                  checked={formData.toppings.includes("bacon")}
+                  onChange={handleToppingsChange}
+                />
+                Dumanlı Sığır Pastırması
+              </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check>
+                <Input
+                  type="checkbox"
+                  name="ham"
+                  checked={formData.toppings.includes("ham")}
+                  onChange={handleToppingsChange}
+                />
+                Jambon
+              </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check>
+                <Input
+                  type="checkbox"
+                  name="anchovies"
+                  checked={formData.toppings.includes("anchovies")}
+                  onChange={handleToppingsChange}
+                />
+                Hamsi
+              </Label>
+            </FormGroup>
+            <FormGroup check inline>
+              <Label check>
+                <Input
+                  type="checkbox"
+                  name="chicken"
+                  checked={formData.toppings.includes("chicken")}
+                  onChange={handleToppingsChange}
+                />
+                Tavuk
+              </Label>
+            </FormGroup>
             <FormGroup check inline>
               <Label check>
                 <Input
@@ -257,6 +261,7 @@ return (
             type="text"
             id="special-text"
             name="special"
+            placeholder="Eklemek istediğiniz not var mı?"
             value={formData.special}
             onChange={handleChange}
           />

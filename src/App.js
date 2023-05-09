@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Switch, NavLink } from "react-router-dom";
 import PizzaForm from "./components/PizzaForm";
 import "./App.css";
+import Success from "./components/Success";
+
 const App = () => {
   return (
     <div className="homePage">
@@ -17,6 +19,9 @@ const App = () => {
             <p>KOD ACIKTIRIR PİZZA DOYURUR!</p>
             <NavLink id="order-pizza" exact to="/pizza" activeClassName="active"> Acıktım</NavLink>
           </div>
+        </Route>
+        <Route path="/success">
+          <Success />
         </Route>
       </Switch>
 
