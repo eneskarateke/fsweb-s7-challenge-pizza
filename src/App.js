@@ -17,16 +17,18 @@ const App = () => {
         <Route path="/">
           <div className="icerik">
             <h1>Teknolojik Yemekler</h1>
-            <p>KOD ACIKTIRIR PİZZA DOYURUR!</p>
-            <NavLink
-              id="order-pizza"
-              exact
-              to="/pizza"
-              activeClassName="active"
-            >
-              {" "}
-              Acıktım
-            </NavLink>
+            <div className="icerikler">
+              <p>KOD ACIKTIRIR PİZZA DOYURUR!</p>
+              <NavLink
+                id="order-pizza"
+                exact
+                to="/pizza"
+                activeClassName="active"
+              >
+                {" "}
+                Acıktım
+              </NavLink>
+            </div>
           </div>
         </Route>
       </Switch>

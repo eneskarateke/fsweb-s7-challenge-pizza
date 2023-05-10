@@ -1,25 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&family=Quattrocento:wght@400;700&family=Satisfy&display=swap");
+/* font-family: 'Barlow', sans-serif;
+font-family: 'Quattrocento', serif;
+font-family: 'Satisfy', cursive; */
+
 header {
-    background: #CE2829;
-    width: 100%;
-    
+  background: #ce2829;
+  width: 100%;
 }
 
 header h1 {
-    color: azure;
+  color: white;
+  font-family: "Barlow", sans-serif;
 }
 
 header nav {
-    display: flex;
-
+  display: flex;
 }
-.headerTexts{
-margin: 0rem 15rem;
-text-align: center;
+.headerTexts {
+  margin: 0rem 15rem;
+  text-align: center;
 }
 
 header nav a {
-    padding: 0rem 1rem;
-    text-decoration: none;
-    color: white;
-
+  padding: 0rem 1rem;
+  text-decoration: none;
+  color: white;
 }

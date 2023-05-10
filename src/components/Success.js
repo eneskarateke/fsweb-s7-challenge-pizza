@@ -1,19 +1,17 @@
-import React from 'react'
-
+import React from "react";
+import "./Success.css";
 function Success() {
   return (
-    <>
-    <header>
-        <div className="headerTexts">
-         <h1>Teknolojik Yemekler</h1>
+    <div className="successContainer">
+      <header>
+        <div className="headerTexts bold">
+          <h1>Teknolojik Yemekler</h1>
         </div>
-    </header>
+      </header>
 
-    <p>TEBRIKLER! SİPARİŞİNİZ ALINDI</p>
-    </>
-
-
-  )
+      <p className="sonDurum">TEBRİKLER! SİPARİŞİNİZ ALINDI</p>
+    </div>
+  );
 }
 
-export default Success
+export default Success;
