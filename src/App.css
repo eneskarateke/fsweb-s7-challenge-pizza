@@ -16,27 +16,26 @@ font-family: 'Satisfy', cursive; */
   align-items: center;
 }
 .icerik {
-  margin-top: 3rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .icerikler {
-  margin-top: 4rem;
-}
-h1 {
-  margin-top: 3rem;
-  font-family: "Quattrocento", serif;
-  font-weight: 700;
-  color: white;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction:column ;
+  gap: 4rem;
+  align-items: center;
 }
 
-p {
+.baslik {
   font-family: "Barlow", sans-serif;
   font-weight: 400;
   color: white;
-  font-size: 40px;
-  width: 20rem;
+  font-size: 4rem;
+  width: 32rem;
+  margin-top: 1rem; 
 }
 
 #order-pizza {
@@ -51,4 +50,38 @@ p {
   color: black;
   font-weight: bold;
   font-family: "Barlow", sans-serif;
+  width: 10rem;
+}
+
+.svgHeader {
+  width: fit-content;
+}
+
+
+
+@media screen and (max-width: 992px) {
+  .homePage {
+  width:auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.baslik{
+  width: auto;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 400px) {
+  .homePage {
+  width:auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.baslik{
+ 
+  font-size: 2rem;
+}
+}
+
 }

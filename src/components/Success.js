@@ -1,16 +1,18 @@
 import React from "react";
+import Header from "../layouts/Header";
+import pizza from "../images/pizza.svg";
+
 import "./Success.css";
 function Success() {
   return (
-    <div className="successContainer">
-      <header>
-        <div className="headerTexts bold">
-          <h1>Teknolojik Yemekler</h1>
-        </div>
-      </header>
-
-      <p className="sonDurum">TEBRİKLER! SİPARİŞİNİZ ALINDI</p>
-    </div>
+    <>
+      <Header />
+      <div className="successContainer">
+        <p className="baslikSuccess">TEBRİKLER! SİPARİŞİNİZ ALINDI</p>
+        <div className="pizzaLogo"></div>
+        <img src={pizza} alt="logo" />
+      </div>
+    </>
   );
 }
 

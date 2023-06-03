@@ -17,11 +17,11 @@ import "./PizzaForm.css";
 
 const PizzaForm = () => {
   const [isFormValid, setFormValid] = useState(false);
-  const [pizza, setPizza] = useState({
+  const pizza = {
     name: "Kendi Pizzanı Kendin Yarat",
     description: "Mozarella ve domates sos",
     price: 70,
-  });
+  };
   const [sizePrice, setSizePrice] = useState(0);
 
   const history = useHistory();
@@ -136,12 +136,19 @@ const PizzaForm = () => {
               <h3 className="kucukFont">
                 Aşağıdan eklemek istediğiniz malzemeleri seçebilirsiniz.
               </h3>
+              <h3 className="kucukFont">
+                <span style={{ color: "red" }}>Dikkat:</span>{" "}
+                <span style={{ color: "red" }}>*</span> bulunan alanlar
+                zorunludur.
+              </h3>
             </div>
           }
 
           <Form id="pizza-form" onSubmit={handleSubmit}>
             <FormGroup>
-              <Label for="name-input">İsim:</Label>
+              <Label for="name-input">
+                İsim: <span style={{ color: "red" }}>*</span>
+              </Label>
               <Input
                 type="text"
                 id="name-input"
@@ -156,25 +163,55 @@ const PizzaForm = () => {
               )}
             </FormGroup>
             <div className="dropdowns">
-              <FormGroup className="dropdown">
-                <Label for="size-dropdown">Boyut Seç:</Label>
-                <h4 className="kucukFont">
-                  Orta 20₺, büyük boy 30₺ ekstra farkla.
-                </h4>
-                <Input
-                  type="select"
-                  id="size-dropdown"
-                  name="size"
-                  value={formData.size}
-                  onChange={handleChange}
-                >
-                  <option value="small">Küçük</option>
-                  <option value="medium">Orta</option>
-                  <option value="large">Büyük</option>
-                </Input>
+              <FormGroup>
+                <Label for="size-radio">
+                  Boyut Seç: <span style={{ color: "red" }}>*</span>
+                </Label>
+                <div>
+                  <Label check>
+                    <Input
+                      type="radio"
+                      id="size-small"
+                      name="size"
+                      value="small"
+                      checked={formData.size === "small"}
+                      onChange={handleChange}
+                    />
+                    Küçük
+                  </Label>
+                </div>
+                <div>
+                  <Label check>
+                    <Input
+                      type="radio"
+                      id="size-medium"
+                      name="size"
+                      value="medium"
+                      checked={formData.size === "medium"}
+                      onChange={handleChange}
+                    />
+                    Orta +20₺ ekstra farkla.
+                  </Label>
+                </div>
+                <div>
+                  <Label check>
+                    <Input
+                      type="radio"
+                      id="size-large"
+                      name="size"
+                      value="large"
+                      checked={formData.size === "large"}
+                      onChange={handleChange}
+                    />
+                    Büyük +30₺ ekstra farkla.
+                  </Label>
+                </div>
               </FormGroup>
+
               <FormGroup className="dropdown">
-                <Label for="thickness-dropdown">Hamur Kalınlığı Seç:</Label>
+                <Label for="thickness-dropdown">
+                  Hamur Seç: <span style={{ color: "red" }}>*</span>
+                </Label>
                 <h4 className="kucukFont">
                   Dilediğiniz kalınlığı fiyat farkı olmadan seçebilirsiniz.
                 </h4>
@@ -185,6 +222,7 @@ const PizzaForm = () => {
                   value={formData.thickness}
                   onChange={handleChange}
                 >
+                  <option value="Hamur">Hamur Kalınlığı</option>
                   <option value="thin">İnce</option>
                   <option value="medium">Orta</option>
                   <option value="thick">Kalın</option>
@@ -194,11 +232,13 @@ const PizzaForm = () => {
 
             <FormGroup>
               <Label className="bold" for="toppings">
-                Ek Malzemeler:
+                Ek Malzemeler: <span style={{ color: "red" }}>*</span>
               </Label>
               <h4 className="kucukFont">
-                Seçtiğiniz her malzeme ekstra 5₺ ücrete tabiidir. En az 4 adet
-                seçim yapmalısınız.
+                Seçtiğiniz her malzeme ekstra 5₺ ücrete tabiidir.{" "}
+                <span style={{ color: "red" }}>
+                  En az 4 adet seçim yapmalısınız.
+                </span>
               </h4>
               <div id="toppings">
                 <FormGroup check inline>

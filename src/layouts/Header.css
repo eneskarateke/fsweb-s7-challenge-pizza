@@ -4,20 +4,29 @@ font-family: 'Quattrocento', serif;
 font-family: 'Satisfy', cursive; */
 
 header {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
   background: #ce2829;
-  width: 100%;
+  width: auto;
 }
 
-header h1 {
-  color: white;
-  font-family: "Barlow", sans-serif;
+.headerLogo{
+  padding-top:  2rem;
+  width: fit-content;
+  
 }
 
-header nav {
+.headerNav {
   display: flex;
+  margin-bottom: 1.5rem;
+  justify-content: flex-start;
 }
 .headerTexts {
-  margin: 0rem 15rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+ 
   text-align: center;
 }
 
@@ -25,4 +34,34 @@ header nav a {
   padding: 0rem 1rem;
   text-decoration: none;
   color: white;
+  transition: .4s,background-position 0s;
+  flex: 1 1 auto;
+  margin: 7px;
+  padding: 10px;
+  text-align: center;
+  /* text-transform: uppercase; */
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+ text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 20px #8d4320;
+  border-radius: 10px;
+
+
+}
+
+header nav a:hover {
+ 
+  background-position: left center; /* change the direction of the change here */
+color: rgb(255, 153, 0);
+}
+
+@media screen and (max-width: 992px) {
+  header {
+  width:100vw;
+}
+.headerNav {
+  flex-direction: column;
+  align-items: center;
+}
 }

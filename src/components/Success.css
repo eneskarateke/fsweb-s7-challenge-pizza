@@ -1,4 +1,4 @@
-.headerTexts {
+.successText {
   padding-top: 3rem;
 }
 .successContainer {
@@ -9,8 +9,19 @@
   flex-direction: column;
   align-items: center;
 }
-.sonDurum {
+
+.baslikSuccess {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  color: white;
+  font-size: 4rem;
+  width: 32rem;
+  margin-top: 2rem; 
   padding-top: 10rem;
+  width: auto;
+}
+.pizzaLogo{
+  margin-top: 3rem;
 }
 
 .bold {

@@ -1,8 +1,10 @@
 import React from "react";
 import { Route, Switch, NavLink } from "react-router-dom";
 import PizzaForm from "./components/PizzaForm";
-import "./App.css";
+
 import Success from "./components/Success";
+import logo from "./images/logo.svg";
+import "./App.css";
 
 const App = () => {
   return (
@@ -16,16 +18,18 @@ const App = () => {
         </Route>
         <Route path="/">
           <div className="icerik">
-            <h1>Teknolojik Yemekler</h1>
+            <div className="svgHeader">
+              <img src={logo} alt="logo" />
+            </div>
+
             <div className="icerikler">
-              <p>KOD ACIKTIRIR PİZZA DOYURUR!</p>
+              <p className="baslik">KOD ACIKTIRIR PİZZA DOYURUR!</p>
               <NavLink
                 id="order-pizza"
                 exact
                 to="/pizza"
                 activeClassName="active"
               >
-                {" "}
                 Acıktım
               </NavLink>
             </div>
